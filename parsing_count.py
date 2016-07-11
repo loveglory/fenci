@@ -2,7 +2,9 @@
 
 import jieba
 
-path_in='testing2.txt'
+jieba.load_userdict("dict/dict.txt")
+
+path_in='D:/My Documents/GitHub/material/testing_2.txt'
 path_out='dict2.txt'
 f_in=open(path_in,encoding='utf-8')
 f_out=open(path_out,'w',encoding='utf-8')
@@ -13,12 +15,6 @@ for i in f_in.readlines():
   seg_list = jieba.lcut(i, cut_all=False)
   com_list.extend(seg_list)
 
-
-##com_list=list(set(com_list))
-##
-##for j in com_list:
-##  f_out.write(j)
-##  f_out.write("\n")
 
 countw = []
 com_list2=set(com_list)
